@@ -1,0 +1,69 @@
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f7f9fc;
+}
+
+/* Make the body span the full height of the viewport */
+html, body {
+    height: 100%;
+}
+
+/* Style for the video background container */
+.video-background {
+    position: fixed; /* This is the fix! */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Ensures the video fills the container and is centered */
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+/* Overlay to improve text readability */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 0;
+}
+
+/* Header styling for transparency and z-index */
+.header {
+    position: fixed; /* Use fixed to keep it at the top */
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3); /* More opaque for glass effect */
+    backdrop-filter: blur(8px); /* Apply the blur effect */
+    -webkit-backdrop-filter: blur(8px); /* For Safari support */
+    z-index: 50;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Custom scrollbar styling for a cleaner look */
+.custom-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.custom-scroll-container::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+.custom-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #6b7280;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Playfair Display font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header id="main-header" class="header shadow-sm top-0">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white hover:text-gray-200 transition-colors">Your Name</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-white hover:text-gray-200 transition-colors">About</a>
+                <a href="#learning-journey" class="text-white hover:text-gray-200 transition-colors">Learning Journey</a>
+                <a href="#projects" class="text-white hover:text-gray-200 transition-colors">Projects</a>
+                <a href="#skills" class="text-white hover:text-gray-200 transition-colors">Skills</a>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-blue-300 hover:text-blue-500 transition-colors">
+                    LinkedIn
+                </a>
+            </nav>
+            <button id="menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <nav id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-700">
+            <ul class="flex flex-col py-2 px-4 space-y-2">
+                <li><a href="#about" class="block py-2 text-white hover:bg-gray-700 rounded-md transition-colors">About</a></li>
+                <li><a href="#learning-journey" class="block py-2 text-white hover:bg-gray-700 rounded-md transition-colors">Learning Journey</a></li>
+                <li><a href="#projects" class="block py-2 text-white hover:bg-gray-700 rounded-md transition-colors">Projects</a></li>
+                <li><a href="#skills" class="block py-2 text-white hover:bg-gray-700 rounded-md transition-colors">Skills</a></li>
+                <li><a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="block py-2 text-blue-300 hover:bg-gray-700 rounded-md transition-colors">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Background Video -->
+    <section id="hero" class="relative text-white text-center flex items-center justify-center min-h-screen py-16 md:py-24">
+        <div class="video-background">
+            <video autoplay loop muted playsinline>
+                <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+                Your Name's Financial Analyst Portfolio
+            </h1>
+            <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
+                Welcome to my portfolio of projects in financial modeling, valuation, data analysis, and corporate finance.
+            </p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="#projects" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105">
+                    View Projects
+                </a>
+                <a href="#contact" class="bg-white border-2 border-gray-300 text-gray-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-transform transform hover:scale-105">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main class="relative z-10">
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 bg-white rounded-t-3xl shadow-lg">
+            <div class="container mx-auto px-4">
+                <div class="bg-[#d2b48c] rounded-3xl shadow-2xl p-8 md:p-12 flex flex-col md:flex-row items-center md:space-x-12">
+                    <div class="flex-shrink-0 mb-6 md:mb-0">
+                        <img src="https://placehold.co/350x350/e2e8f0/334155?text=Your+Photo" alt="Your Name" class="w-56 h-56 md:w-80 md:h-80 rounded-full object-cover shadow-xl border-4 border-white transform hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h2 class="text-4xl font-extrabold text-gray-900 mb-4">About Me</h2>
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            I am a passionate and results-driven financial analyst with a strong foundation in corporate finance, valuation, and data analytics. My work focuses on leveraging financial modeling and data-driven insights to help businesses make informed strategic decisions. I am highly proficient in Python for data analysis, and I use Excel and various visualization tools to build robust, dynamic models. My goal is is to apply my analytical skills to real-world business challenges and contribute to impactful financial strategies.
+                        </p>
+                        <p class="mt-4 text-gray-700 leading-relaxed text-lg">
+                            This portfolio is a collection of my personal projects, showcasing my abilities in financial statement analysis, discounted cash flow (DCF) valuation, and other analytical tasks.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Journey Section with horizontal scrolling -->
+        <section id="learning-journey" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">My Learning Journey</h2>
+                <div class="bg-white rounded-xl shadow-lg p-8 md:p-12">
+                    <div class="flex overflow-x-auto snap-x snap-mandatory space-x-6 pb-4 custom-scroll-container">
+                        <div class="flex-none w-80 snap-center">
+                            <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                <img src="https://placehold.co/400x250/d1d5db/4b5563?text=Certificate+Image" alt="Certification" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2">Financial Modeling & Valuation Analyst (FMVA)</h3>
+                                    <p class="text-gray-600 text-sm">
+                                        A rigorous certification from the Corporate Finance Institute (CFI) focusing on practical financial modeling skills.
+                                    </p>
+                                    <div class="mt-4">
+                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Certification</span>
+                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">CFI</span>
+                                    </div>
+                                    <a href="details.html?id=learning1" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-none w-80 snap-center">
+                            <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                <img src="https://placehold.co/400x250/d1d5db/4b5563?text=Course+Image" alt="Course" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2">Excel for Finance Crash Course</h3>
+                                    <p class="text-gray-600 text-sm">
+                                        A foundational course on advanced Excel functions and shortcuts for financial professionals.
+                                    </p>
+                                    <div class="mt-4">
+                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Course</span>
+                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Excel</span>
+                                    </div>
+                                    <a href="details.html?id=learning2" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-none w-80 snap-center">
+                            <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                <img src="https://placehold.co/400x250/d1d5db/4b5563?text=Skill+Image" alt="Skill" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2">Introduction to Python for Data Analysis</h3>
+                                    <p class="text-gray-600 text-sm">
+                                        Learning the fundamentals of Python for cleaning, analyzing, and visualizing financial data.
+                                    </p>
+                                    <div class="mt-4">
+                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Skill</span>
+                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
+                                    </div>
+                                    <a href="details.html?id=learning3" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section with horizontal scrolling -->
+        <section id="projects" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">Featured Projects</h2>
+                <div class="bg-white rounded-xl shadow-lg p-8 md:p-12">
+                    <div class="flex overflow-x-auto snap-x snap-mandatory space-x-6 pb-4 custom-scroll-container">
+                        <div class="flex-none w-80 snap-center">
+                            <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                <img src="https://placehold.co/400x250/e0e0e0/555555?text=Project+1+Image" alt="Project 1" class="w-full h-48 object-cover">
+                                <div class="p-6" data-project-id="project1">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2">3-Statement Financial Model for a Tech Company</h3>
+                                    <p class="text-gray-600 text-sm">
+                                        A comprehensive model forecasting the income statement, balance sheet, and cash flow statement.
+                                    </p>
+                                    <div class="mt-4">
+                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Financial Modeling</span>
+                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Excel</span>
+                                    </div>
+                                    <a href="details.html?id=project1" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">Read More &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-none w-80 snap-center">
+                            <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                <img src="https://placehold.co/400x250/e0e0e0/555555?text=Project+2+Image" alt="Project 2" class="w-full h-48 object-cover">
+                                <div class="p-6" data-project-id="project2">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2">Discounted Cash Flow (DCF) Valuation</h3>
+                                    <p class="text-gray-600 text-sm">
+                                        A valuation of a public company using a DCF model to determine its intrinsic value.
+                                    </p>
+                                    <div class="mt-4">
+                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Valuation</span>
+                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
+                                    </div>
+                                    <a href="details.html?id=project2" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">Read More &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-none w-80 snap-center">
+                            <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                <img src="https://placehold.co/400x250/e0e0e0/555555?text=Project+3+Image" alt="Project 3" class="w-full h-48 object-cover">
+                                <div class="p-6" data-project-id="project3">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2">S&P 500 Stock Analysis Dashboard</h3>
+                                    <p class="text-gray-600 text-sm">
+                                        An interactive dashboard for analyzing the performance of companies in the S&P 500.
+                                    </p>
+                                    <div class="mt-4">
+                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Data Analysis</span>
+                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Tableau</span>
+                                    </div>
+                                    <a href="details.html?id=project3" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">Read More &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="bg-white rounded-xl shadow-lg p-8 md:p-12">
+                    <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">My Skills</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-inner">
+                            <h3 class="text-lg font-semibold text-gray-800">Financial Modeling</h3>
+                            <p class="text-sm text-gray-500 mt-1">DCF, LBO, M&A</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-inner">
+                            <h3 class="text-lg font-semibold text-gray-800">Valuation</h3>
+                            <p class="text-sm text-gray-500 mt-1">Comps, Precedents</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-inner">
+                            <h3 class="text-lg font-semibold text-gray-800">Software</h3>
+                            <p class="text-sm text-gray-500 mt-1">Excel, Python, SQL, Tableau</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-inner">
+                            <h3 class="text-lg font-semibold text-gray-800">Data Analysis</h3>
+                            <p class="text-sm text-gray-500 mt-1">Financial Statement Analysis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
