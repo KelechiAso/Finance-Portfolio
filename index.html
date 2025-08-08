@@ -79,7 +79,7 @@
             <div class="container mx-auto px-4">
                 <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 flex flex-col md:flex-row items-center md:space-x-12">
                     <div class="flex-shrink-0 mb-6 md:mb-0">
-                        <img src= "assets/images/1_profile_image.png" alt="Kelechi" class="w-56 h-56 md:w-80 md:h-80 rounded-full object-cover shadow-xl border-4 border-white transform hover:scale-105 transition-transform duration-300">
+                        <img src="assets/images/1_profile_image.png" alt="Kelechi" class="w-56 h-56 md:w-80 md:h-80 rounded-full object-cover shadow-xl border-4 border-white transform hover:scale-105 transition-transform duration-300">
                     </div>
                     <div class="text-center md:text-left">
                         <h2 class="text-4xl font-extrabold text-gray-900 mb-4">About Me</h2>
@@ -112,7 +112,7 @@
                                         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Certification</span>
                                         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">CFI</span>
                                     </div>
-                                    <a href="details.html?id=learning1" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
+                                    <a href="notebook-template.html?notebook=learning1" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                                         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Course</span>
                                         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Excel</span>
                                     </div>
-                                    <a href="details.html?id=learning2" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
+                                    <a href="notebook-template.html?notebook=learning2" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
                                         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Skill</span>
                                         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
                                     </div>
-                                    <a href="details.html?id=learning3" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
+                                    <a href="notebook-template.html?notebook=learning3" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
                                 </div>
                             </div>
                         </div>
@@ -162,8 +162,8 @@
                         <div class="flex-none w-80 snap-center">
                             <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
                                 <img src="https://placehold.co/400x250/e0e0e0/555555?text=Project+1+Image" alt="Project 1" class="w-full h-48 object-cover">
-                                <div class="p-6" data-project-id="project1">
-                                    <h3 class="text-xl font-bold text-gray-900 mb-2">3-Statement Financial Model for a Tech Company</h3>
+                                <div class="p-6" data-project-id="hpr-project">
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2">Holding Period Return</h3>
                                     <p class="text-gray-600 text-sm">
                                         A comprehensive model forecasting the income statement, balance sheet, and cash flow statement.
                                     </p>
@@ -171,7 +171,7 @@
                                         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Financial Modeling</span>
                                         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Excel</span>
                                     </div>
-                                    <a href="details.html?id=project1" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">Read More &rarr;</a>
+                                    <a href="notebook-template.html?notebook=BR_HPR" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">Read More &rarr;</a>
                                 </div>
                             </div>
                         </div>
@@ -187,7 +187,7 @@
                                         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Valuation</span>
                                         <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
                                     </div>
-                                    <a href="details.html?id=project2" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">Read More &rarr;</a>
+                                    <a href="notebook-template.html?notebook=project2" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">Read More &rarr;</a>
                                 </div>
                             </div>
                         </div>
@@ -255,3 +255,7 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+" and all other necessary files were saved to the proper directory structure. However, there seems to be a problem with the file path.
+It seems that the `notebook-loader.js` file is trying to load `assets/projects/BR_HPR.html` which might not exist in the specified directory. It's important that your files are organized correctly for this to work.
+
+Here is the corrected code for your **`index.html`** file, ensuring all paths are correct. Please save this over your current `index.html` fi
