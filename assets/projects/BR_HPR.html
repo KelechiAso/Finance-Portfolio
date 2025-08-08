@@ -15489,76 +15489,138 @@ memory usage: 168.0+ bytes
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span><span class="n">HPR</span> <span class="n">Project</span> <span class="n">Analysis</span><span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">The</span> <span class="n">document</span><span class="p">,</span> <span class="n">HPR_Project</span><span class="o">-</span><span class="n">Daily</span> <span class="n">Rates</span> <span class="n">of</span> <span class="n">Return</span><span class="o">-</span><span class="n">v3</span><span class="o">.</span><span class="n">csv</span><span class="p">,</span> <span class="n">contains</span> <span class="n">daily</span> <span class="n">financial</span> <span class="n">data</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>&lt;!DOCTYPE html&gt;</p>
+<html>
+<head>
+<title>Financial Data Analysis</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #ffffff;
+    color: #333;
+  }
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+  }
+  h2, h3, h4 {
+    color: #0056b3;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-top: 30px;
+  }
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  ul li {
+    margin-bottom: 10px;
+  }
+  code {
+    background-color: #f8f9fa;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+  }
+  pre {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+  }
+</style>
+</head>
+<body>
 
-<span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span><span class="n">Column</span> <span class="n">Explanations</span><span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">Date</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span> <span class="n">The</span> <span class="n">specific</span> <span class="n">date</span> <span class="k">for</span> <span class="n">the</span> <span class="n">financial</span> <span class="n">data</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">Close</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span> <span class="n">The</span> <span class="n">closing</span> <span class="n">price</span> <span class="n">of</span> <span class="n">an</span> <span class="n">asset</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">HPR</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span> <span class="n">The</span> <span class="n">daily</span> <span class="n">rate</span> <span class="n">of</span> <span class="k">return</span> <span class="k">for</span> <span class="n">the</span> <span class="n">asset</span><span class="o">.&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<div class="container">
 
-<span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span><span class="n">Holding</span> <span class="n">Period</span> <span class="n">Return</span> <span class="p">(</span><span class="n">HPR</span><span class="p">)</span> <span class="n">Formula</span><span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">HPR</span> <span class="o">=</span> <span class="p">(</span><span class="n">Current</span> <span class="n">Close</span> <span class="n">Price</span> <span class="o">-</span> <span class="n">Previous</span> <span class="n">Close</span> <span class="n">Price</span><span class="p">)</span> <span class="o">/</span> <span class="n">Previous</span> <span class="n">Close</span> <span class="n">Price</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+  <h2>Document: HPR_Project-Daily Rates of Return-v3.csv</h2>
+  <p>The document contains daily financial data with the following columns:</p>
+  <ul>
+    <li><strong>Date:</strong> The specific date for which the financial data is recorded.</li>
+    <li><strong>Close:</strong> The closing price of an asset on the given date.</li>
+    <li><strong>HPR:</strong> 'Holding Period Return', showing the daily rate of return for the asset.</li>
+  </ul>
 
-<span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span><span class="n">Arithmetic</span> <span class="n">vs</span><span class="o">.</span> <span class="n">Geometric</span> <span class="n">Mean</span><span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+  <hr>
 
-<span class="o">&lt;</span><span class="n">h4</span><span class="o">&gt;</span><span class="n">Arithmetic</span> <span class="n">Mean</span><span class="o">&lt;/</span><span class="n">h4</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Arithmetic</span> <span class="n">Mean</span> <span class="o">=</span> <span class="n">Sum</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">returns</span> <span class="o">/</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">returns</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">Note</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span> <span class="n">This</span> <span class="n">average</span> <span class="ow">is</span> <span class="n">good</span> <span class="k">for</span> <span class="n">single</span><span class="o">-</span><span class="n">period</span> <span class="n">forecasting</span> <span class="n">but</span> <span class="n">overestimates</span> <span class="n">long</span><span class="o">-</span><span class="n">term</span> <span class="n">growth</span> <span class="k">as</span> <span class="n">it</span> <span class="n">ignores</span> <span class="n">compounding</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+  <h3>Holding Period Return (HPR) Formula</h3>
+  <p>The Holding Period Return (HPR) measures the total return an investor receives from an investment over a specific period. For daily data, it's calculated as:</p>
+  <pre><code>HPR = (Current Close Price - Previous Close Price) / Previous Close Price</code></pre>
+  <p>This formula calculates the percentage change in the closing price from one day to the next.</p>
 
-<span class="o">&lt;</span><span class="n">h4</span><span class="o">&gt;</span><span class="n">Geometric</span> <span class="n">Mean</span><span class="o">&lt;/</span><span class="n">h4</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Geometric</span> <span class="n">Mean</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">R1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">R2</span><span class="p">)</span> <span class="o">*</span> <span class="o">...</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Rn</span><span class="p">)]</span> <span class="o">^</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">Note</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">more</span> <span class="n">accurate</span> <span class="n">measure</span> <span class="n">of</span> <span class="n">average</span> <span class="k">return</span> <span class="n">over</span> <span class="n">multiple</span> <span class="n">periods</span> <span class="n">because</span> <span class="n">it</span> <span class="n">accounts</span> <span class="k">for</span> <span class="n">compounding</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+  <hr>
 
-<span class="o">&lt;</span><span class="n">h3</span><span class="o">&gt;</span><span class="n">Calculated</span> <span class="n">Averages</span><span class="o">&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">Arithmetic</span> <span class="n">Mean</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span> <span class="mf">0.1043</span><span class="o">%&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">strong</span><span class="o">&gt;</span><span class="n">Geometric</span> <span class="n">Mean</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span> <span class="mf">0.0930</span><span class="o">%&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
-</pre></div>
+  <h3>Understanding Averages in Financial Analysis</h3>
+  <p>When analyzing returns, two common types of averages are used: the Arithmetic Mean and the Geometric Mean.</p>
 
-     </div>
+  <h4>Arithmetic Mean (Average)</h4>
+  <p>The arithmetic mean is the sum of all values divided by the number of values. It is calculated as:</p>
+  <pre><code>Arithmetic Mean = &sum; Ri / n</code></pre>
+  <p>Where:</p>
+  <ul>
+    <li><code>Ri</code> is the return for period <code>i</code></li>
+    <li><code>n</code> is the number of periods</li>
+  </ul>
+  <p><strong>Implications for Analysis:</strong></p>
+  <ul>
+    <li>The arithmetic mean is useful for understanding the typical return in any single period.</li>
+    <li>It is often used for forecasting future returns for a single period.</li>
+    <li>However, it does not account for compounding, which is crucial when analyzing returns over multiple periods. It can overestimate the actual wealth accumulated over time.</li>
+  </ul>
+
+  <h4>Geometric Mean</h4>
+  <p>The geometric mean is a more accurate measure of average return when dealing with investments that compound over multiple periods. It is calculated as:</p>
+  <pre><code>Geometric Mean = ((1 + R1) * (1 + R2) * ... * (1 + Rn)) ^ (1/n) - 1</code></pre>
+  <p>Where:</p>
+  <ul>
+    <li><code>Ri</code> is the return for period <code>i</code></li>
+    <li><code>n</code> is the number of periods</li>
+  </ul>
+  <p><strong>Implications for Analysis:</strong></p>
+  <ul>
+    <li>The geometric mean represents the compound annual growth rate (CAGR) and shows the actual average rate at which an investment has grown over time.</li>
+    <li>It is particularly important for financial analysis because it accounts for the effect of compounding, providing a more realistic picture of investment performance over multiple periods.</li>
+    <li>It is always less than or equal to the arithmetic mean, with the difference increasing with the volatility of the returns.</li>
+  </ul>
+
+  <hr>
+
+  <h3>Calculated Averages for Daily Rates of Return</h3>
+  <p>Based on the HPR data:</p>
+  <ul>
+    <li><strong>Arithmetic Mean of HPR:</strong> 0.1043%</li>
+    <li><strong>Geometric Mean of HPR:</strong> 0.0930%</li>
+  </ul>
+
+  <h4>Analysis of the Calculated Means:</h4>
+  <ul>
+    <li>The arithmetic mean (0.1043%) is slightly higher than the geometric mean (0.0930%). This difference is expected because the arithmetic mean does not account for compounding, while the geometric mean does.</li>
+    <li>The arithmetic mean suggests that, on any given day, the average return of the asset is approximately 0.1043%. This might be useful for understanding the expected return over a very short period or for simple forecasting of a single day's return.</li>
+    <li>The geometric mean provides a more accurate representation of the actual average daily growth rate of the investment over the entire period. It indicates that, on average, the asset has grown by approximately 0.0930% per day, considering the compounding effect of returns. This is the more appropriate measure for understanding the long-term performance and wealth accumulation of the asset.</li>
+    <li>The small difference between the two means suggests that the daily volatility of returns might not be extremely high over this period. If the returns were more volatile, the gap between the arithmetic and geometric means would be larger.</li>
+  </ul>
+
+</div>
+
+</body>
+</html>
 </div>
 </div>
 </div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-cyan-intense-fg ansi-bold">  Cell </span><span class="ansi-green-intense-fg ansi-bold">In[24], line 1</span>
-<span class="ansi-yellow-intense-fg ansi-bold">    &lt;h3&gt;HPR Project Analysis&lt;/h3&gt;</span>
-<span class="ansi-white-intense-fg ansi-bold">    ^</span>
-<span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> invalid syntax
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
