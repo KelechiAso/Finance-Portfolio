@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandas for Data Analysis</title>
+    <!-- Playfair Display font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f7f9fc;
+            color: #1a202c;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        /* Styles for the notebook cell content wrapper */
+        .jp-Cell {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 40px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #3e2723; /* Dark brown for headings */
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        ol {
+            list-style-type: decimal;
+            padding-left: 2rem;
+        }
+
+        /* Links */
+        a {
+            color: #2b6cb0;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #2c5282;
+        }
+
+        /* Strong/Bold text */
+        strong {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        /* Markdown-specific container class for general text */
+        .jp-RenderedHTMLCommon p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Code-specific styling for the notebook content */
+        .jp-CodeMirrorEditor pre, .jp-CodeMirrorEditor code {
+            font-family: monospace;
+            background-color: #f7f9fc;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-size: 0.875rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: #2b6cb0;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #2c5282;
+        }
+    </style>
+</head>
+<body>
+    <div class="jp-Cell">
+        <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+            <h1>My Learning Journey: Pandas for Data Analysis</h1>
+            <p>I’ve been learning Python, and the **pandas** library is an absolute game-changer. It’s basically the best tool for data manipulation and analysis, especially when you're dealing with financial data. This is my personal documentation of what I've learned, walking through the essential steps of a data analysis project.</p>
+
+            <h2>Part 1: The Core of Pandas - Series and DataFrame</h2>
+            <p>Before I could do anything serious, I had to get a handle on the main data structures. They're pretty simple once you get them:</p>
+            <ul>
+                <li><strong><code>pd.Series</code>:</strong> I think of a Series as a single column of data. It's a one-dimensional array that can hold any data type, like a list of stock prices or dates.</li>
+                <li><strong><code>pd.DataFrame</code>:</strong> This is where the real work happens. It's a two-dimensional, tabular data structure, just like a spreadsheet in Excel or a table in a database. It's made up of multiple Series, with a column for each variable and a row for each observation. It's perfect for holding financial datasets.</li>
+            </ul>
+
+            <h2>Part 2: The Data Analysis Workflow in Pandas</h2>
+            <p>My projects usually follow a clear workflow to get from raw data to actionable insights.</p>
+            <ol>
+                <li>
+                    <strong>Data Loading & Saving:</strong> The first step is getting my data into Python. The <code>pd.read_csv()</code> and <code>pd.read_excel()</code> functions are my go-to for importing data from different file formats. When I'm done with my analysis, I use <code>df.to_csv()</code> or <code>df.to_excel()</code> to save my work.
+                    <pre><code>
+# Load stock price data from a CSV file
+stock_data = pd.read_csv('AAPL_stock_data.csv')
+
+# Save the updated DataFrame to a new Excel file
+stock_data.to_excel('updated_stock_data.xlsx')
+                    </code></pre>
+                </li>
+                <li>
+                    <strong>Data Exploration:</strong> Before I start, I need to know what I'm dealing with. I use these methods to get a quick overview:
+                    <ul>
+                        <li><strong><code>.head()</code> and <code>.tail()</code>:</strong> Show me the first or last few rows of the DataFrame. This is great for a quick peek at the data.</li>
+                        <li><strong><code>.info()</code>:</strong> Gives me a summary of the DataFrame, including the number of entries, data types for each column, and counts of non-null values. Super useful for spotting missing data.</li>
+                        <li><strong><code>.describe()</code>:</strong> Provides a statistical summary of numerical columns, showing things like mean, standard deviation, and quartiles. Perfect for understanding the data's distribution.</li>
+                        <li><strong><code>.shape</code>:</strong> Tells me the dimensions of the DataFrame (rows, columns). I use this a lot to check the size of my data.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Data Cleaning & Manipulation:</strong> This is where I prepare my data for analysis.
+                    <ul>
+                        <li><strong>Handling Missing Data:</strong> I use <code>.dropna()</code> to remove rows or columns with missing values, or <code>.fillna()</code> to fill them in, maybe with a mean or a specific value.
+                        <pre><code>
+# Drop rows with any missing values
+df_cleaned = df.dropna()
+
+# Fill missing values in a column with the mean
+df['Revenue'].fillna(df['Revenue'].mean(), inplace=True)
+                        </code></pre>
+                        </li>
+                        <li><strong>`.groupby()` and Aggregation:</strong> This is a powerful technique for financial analysis. I can group data by a category—like a stock ticker or a specific year—and then calculate a summary statistic like the sum or mean for each group.
+                        <pre><code>
+# Group stock data by ticker and calculate the average price
+avg_price_per_stock = stock_data.groupby('Ticker')['Close'].mean()
+                        </code></pre>
+                        </li>
+                        <li><strong>Slicing and Indexing:</strong> I use `df.loc[ ]` to select data based on labels (like row and column names) and `df.iloc[ ]` to select data based on numerical positions. This is super helpful for filtering specific periods or metrics.
+                        <pre><code>
+# Get all data for 'AAPL' stock
+aapl_data = stock_data.loc[stock_data['Ticker'] == 'AAPL']
+                        </code></pre>
+                        </li>
+                        <li><strong>Adding New Columns:</strong> It's easy to create new columns with calculated data, like daily returns.
+                        <pre><code>
+# Calculate daily returns
+stock_data['Daily_Return'] = stock_data['Close'].pct_change()
+                        </code></pre>
+                        </li>
+                        <li><strong><code>.merge()</code>:</strong> I use this to combine multiple DataFrames, similar to a VLOOKUP in Excel. It's perfect for joining financial data from different sources, like stock prices and dividend data.
+                        <pre><code>
+# Merge two DataFrames on a common column
+merged_df = pd.merge(df1, df2, on='Date')
+                        </code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Statistical & Mathematical Operations:</strong> Pandas makes it easy to run calculations on my data.
+                    <ul>
+                        <li><strong><code>.sum()</code>, <code>.mean()</code>, <code>.std()</code>:</strong> These are basic but essential for getting a quick statistical overview of my data.</li>
+                        <li><strong><code>.pct_change()</code>:</strong> This calculates the percentage change between the current and a prior element. It's invaluable for calculating daily stock returns.</li>
+                        <li><strong><code>.corr()</code>:</strong> I use this to compute the correlation between columns in a DataFrame, which is super important in portfolio management to see how different assets move together.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Data Visualization:</strong> Pandas has built-in plotting that makes it easy to visualize trends. This helps me get a better feel for the data before I even start building a full financial model.
+                </li>
+            </ol>
+            
+            <a href="notebook-template.html?notebook=pandas-data-analysis-project" class="button">View My Pandas Project &rarr;</a>
+        </div>
+    </div>
+</body>
+</html>
