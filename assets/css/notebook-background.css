@@ -42,56 +42,40 @@ html, body {
     z-index: 0;
 }
 
-/* Ensure the notebook content is readable on top of the video */
-.jp-Notebook {
-    position: relative;
-    z-index: 10;
-    background-color: transparent;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
-}
-
-/* Give the individual cells a solid background for readability */
+/*
+    FIXED: The styling for notebook cells has been simplified
+    to prevent the "card-within-a-card" look.
+*/
 .jp-Cell {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    margin: 20px auto;
-    overflow: hidden;
-    padding: 20px;
-    max-width: 1400px; /* Increased max width for a wider view */
-    width: 90%; /* Added to make it responsive */
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
+    /* Removed background, shadow, and radius to make them simple content blocks */
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    
+    /* Removed restrictive width and margins */
+    max-width: none;
+    width: 100%;
+    margin: 0;
+
+    /* Add vertical spacing and a subtle separator line between cells */
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e2e8f0; /* light gray line */
 }
 
-/* This is needed to make the code text visible */
+/* Remove the line from the very last cell */
+.jp-Notebook > .jp-Cell:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Ensure code blocks are still readable and can scroll horizontally */
 .jp-CodeMirrorEditor pre, .jp-CodeMirrorEditor code {
     color: #1a202c;
     background: transparent;
-    white-space: pre; /* Corrected to prevent wrapping */
-    overflow-x: auto; /* Added horizontal scrollbar for long lines */
+    white-space: pre; 
+    overflow-x: auto; /* Allows long code lines to scroll */
 }
 
 .jp-RenderedHTMLCommon h1, .jp-RenderedHTMLCommon h2, .jp-RenderedHTMLCommon h3 {
     font-family: 'Playfair Display', serif;
-}
-
-/* Corrected navigation bar styles for a clean, non-translucent look */
-.header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: white; /* Changed to solid white for readability */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    z-index: 50;
-    transition: transform 0.3s ease-in-out;
-}
-.header a {
-    color: #1a202c; /* Dark text for readability on white background */
-}
-.header a:hover {
-    color: #4a5568;
 }
