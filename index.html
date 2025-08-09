@@ -10,8 +10,53 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for arrows -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .carousel-container {
+            display: flex;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            padding-bottom: 20px;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+        }
+        
+        .carousel-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 20;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-nav-btn:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .carousel-nav-btn.left {
+            left: 10px;
+        }
+
+        .carousel-nav-btn.right {
+            right: 10px;
+        }
+    </style>
 </head>
 <body class="text-gray-800">
 
@@ -94,110 +139,127 @@
             </div>
         </section>
 
-
-        <!--- Learning Journey Section with horizontal scrolling -->
-        <!--- Learning Journey Section with horizontal scrolling -->
-        <!--- Learning Journey Section with horizontal scrolling -->
-        <!--- Learning Journey Section with horizontal scrolling -->
-        <!--- Learning Journey Section with horizontal scrolling -->
-
+        <!-- Learning Journey Section with a grid layout -->
         <section id="learning-journey" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">My Learning Journey</h2>
-        <div class="bg-white rounded-xl shadow-lg p-8 md:p-12">
-            <div class="flex overflow-x-auto snap-x snap-mandatory space-x-6 pb-4 custom-scroll-container">
-                <!-- NEW: Learning Journey Card for 3-Statement Model -->
-                <div class="flex-none w-80 snap-center">
-                    <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                        <img src="assets\images\3statement.jpg" alt="3-Statement Financial Model" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">3-Statement Financial Model</h3>
-                            <p class="text-gray-600 text-sm">
-                                The foundational interconnected model of the Income Statement, Balance Sheet, and Cash Flow Statement.
-                            </p>
-                            <div class="mt-4">
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Fundamental</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Financial Modeling</span>
-                            </div>
-                            <a href="notebook-template.html?notebook=three-statement-model" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">My Learning Journey</h2>
+                <div id="learning-carousel-wrapper" class="relative">
+                    <div id="learning-carousel" class="carousel-container gap-6 pb-4">
+                        <!-- Card 1 -->
+                        <div class="w-full flex-none">
+                            <div class="card-grid">
 
-                <!-- Learning Journey Card 2: Excel for Finance -->
-                <div class="flex-none w-80 snap-center">
-                    <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                        <img src="assets\images\excelforfin.jpg" alt="Course" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Excel for Finance Crash Course</h3>
-                            <p class="text-gray-600 text-sm">
-                                A comprehensive guide on advanced Excel functions and shortcuts for financial professionals.
-                            </p>
-                            <div class="mt-4">
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Course</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Excel</span>
-                            </div>
-                            <a href="notebook-template.html?notebook=excel-for-finance" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Learning Journey Card 3: Financial Statement Analysis -->
-                <div class="flex-none w-80 snap-center">
-                    <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                        <img src="assets\images\FinStat.jpg" alt="Course" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Financial Statement Analysis</h3>
-                            <p class="text-gray-600 text-sm">
-                                Studied the process of evaluating a company’s financial health and performance by reviewing its financial statements
-                            </p>
-                            <div class="mt-4">
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Informed Decision</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Risk management</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Investor Confidence</span>
-                            </div>
-                            <a href="notebook-template.html?notebook=financial-statement-analysis" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Learning Journey Card 3: Pandas for Data Analytics -->
-                        <div class="flex-none w-80 snap-center">
-                            <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                                <img src="assets\images\pandas_pic.jpg" alt="Skill" class="w-full h-48 object-cover">
-                                <div class="p-6">
-                                    <h3 class="text-xl font-bold text-gray-900 mb-2">Pandas for Data Analysis</h3>
-                                    <p class="text-gray-600 text-sm">
-                                        Learning about the Python package Pandas for cleaning, analyzing, and visualizing financial data.
-                                    </p>
-                                    <div class="mt-4">
-                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Skill</span>
-                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
+                                <!-- 3-Statement Financial Model -->
+                                <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                    <img src="assets/images/3statement.jpg" alt="3-Statement Financial Model" class="w-full h-48 object-cover">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-bold text-gray-900 mb-2">3-Statement Financial Model</h3>
+                                        <p class="text-gray-600 text-sm">
+                                            The foundational interconnected model of the Income Statement, Balance Sheet, and Cash Flow Statement.
+                                        </p>
+                                        <div class="mt-4">
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Fundamental</span>
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Financial Modeling</span>
+                                        </div>
+                                        <a href="notebook-template.html?notebook=three-statement-model" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
                                     </div>
-                                    <a href="notebook-template.html?notebook=pandas-for-data-analysis" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
+                                </div>
+
+                                <!-- Excel for Finance Crash Course -->
+                                <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                    <img src="assets\images\excelforfin.jpg" alt="Course" class="w-full h-48 object-cover">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-bold text-gray-900 mb-2">Excel for Finance Crash Course</h3>
+                                        <p class="text-gray-600 text-sm">
+                                            A foundational course on advanced Excel functions and shortcuts for financial professionals.
+                                        </p>
+                                        <div class="mt-4">
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Course</span>
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Excel</span>
+                                        </div>
+                                        <a href="notebook-template.html?notebook=excel-for-finance" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
+                                    </div>
+                                </div>
+
+                                 <!-- Financial Statement Analysis -->
+                                <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                    <img src="assets/images/FinStat.jpg" alt="Financial Statement Analysis" class="w-full h-48 object-cover">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-bold text-gray-900 mb-2">Financial Statement Analysis</h3>
+                                        <p class="text-gray-600 text-sm">
+                                            Studied the process of evaluating a company's financial health and performance by reviewing its financial statements
+                                        </p>
+                                        <div class="mt-4">
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Informed Decision</span>
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Risk management</span>
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Investor Confidence</span>
+                                        </div>
+                                        <a href="notebook-template.html?notebook=financial-statement-analysis" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                <!-- Learning Journey Card 4: Regression -->
-                        <div class="flex-none w-80 snap-center">
-                            <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                                <img src="assets\images\regres_pic.jpg" alt="Skill" class="w-full h-48 object-cover">
-                                <div class="p-6">
-                                    <h3 class="text-xl font-bold text-gray-900 mb-2">Regression Analysis</h3>
-                                    <p class="text-gray-600 text-sm">
-                                        Regression and value prediction techniques.
-                                    </p>
-                                    <div class="mt-4">
-                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Skill</span>
-                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
+                        <!-- Card 2 -->
+                        <div class="w-full flex-none">
+                            <div class="card-grid">
+
+                                <!-- Pandas for Data Analysis -->
+                                <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                    <img src="assets/images/pandas_pic.jpg" alt="Pandas for Data Analysis" class="w-full h-48 object-cover">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-bold text-gray-900 mb-2">Pandas for Data Analysis</h3>
+                                        <p class="text-gray-600 text-sm">
+                                            Learning about the Python package Pandas for cleaning, analyzing, and visualizing financial data.
+                                        </p>
+                                        <div class="mt-4">
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Skill</span>
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
+                                        </div>
+                                        <a href="notebook-template.html?notebook=pandas-for-data-analysis" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
                                     </div>
-                                    <a href="notebook-template.html?notebook=regression" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
+                                </div>
+
+                                <!-- Regression Models in Analysis -->
+                                <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                    <img src="assets/images/regres_pic.jpg" alt="Regression Model" class="w-full h-48 object-cover">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-bold text-gray-900 mb-2">Regression Models in Analysis</h3>
+                                        <p class="text-gray-600 text-sm">
+                                            My personal guide on using regression models for forecasting and predictive analysis in finance.
+                                        </p>
+                                        <div class="mt-4">
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Machine Learning</span>
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
+                                        </div>
+                                        <a href="notebook-template.html?notebook=regression" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">View Details &rarr;</a>
+                                    </div>
+                                </div>
+
+                                <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                    <img src="https://placehold.co/400x250/e0e0e0/555555?text=Future+Project" alt="Future Project" class="w-full h-48 object-cover">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-bold text-gray-900 mb-2">Future Project</h3>
+                                        <p class="text-gray-600 text-sm">
+                                            Placeholder for an upcoming project.
+                                        </p>
+                                        <div class="mt-4">
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Placeholder</span>
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Coming Soon</span>
+                                        </div>
+                                        <a href="#" class="mt-4 inline-block text-gray-400 font-bold transition-colors">Coming Soon</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
+                    <!-- Navigation buttons -->
+                    <button id="learning-left-btn" class="carousel-nav-btn left">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="learning-right-btn" class="carousel-nav-btn right">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -206,57 +268,63 @@
         <section id="projects" class="py-16 bg-white">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">Featured Projects</h2>
-                <div class="bg-white rounded-xl shadow-lg p-8 md:p-12">
-                    <div class="flex overflow-x-auto snap-x snap-mandatory space-x-6 pb-4 custom-scroll-container">
-                        <div class="flex-none w-80 snap-center">
-                            <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                                <img src="assets/images/HPR.jpg" alt="Project 1" class="w-full h-48 object-cover">
-                                <div class="p-6" data-project-id="hpr-project">
-                                    <h3 class="text-xl font-bold text-gray-900 mb-2">Holding Period Return</h3>
-                                    <p class="text-gray-600 text-sm">
-                                        A comprehensive model forecasting the income statement, balance sheet, and cash flow statement.
-                                    </p>
-                                    <div class="mt-4">
-                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Financial Modeling</span>
-                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Excel</span>
+                <div class="bg-white rounded-xl shadow-lg p-8 md:p-12 relative">
+                    <div id="projects-carousel" class="carousel-container gap-6 pb-4">
+                        <!-- Card 1 -->
+                        <div class="w-full flex-none">
+                            <div class="card-grid">
+                                <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                    <img src="assets/images/HPR.jpg" alt="Project 1" class="w-full h-48 object-cover">
+                                    <div class="p-6" data-project-id="hpr-project">
+                                        <h3 class="text-xl font-bold text-gray-900 mb-2">Holding Period Return</h3>
+                                        <p class="text-gray-600 text-sm">
+                                            A comprehensive model forecasting the income statement, balance sheet, and cash flow statement.
+                                        </p>
+                                        <div class="mt-4">
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Financial Modeling</span>
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Excel</span>
+                                        </div>
+                                        <a href="notebook-template.html?notebook=BR_HPR" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">Read More &rarr;</a>
                                     </div>
-                                    <a href="notebook-template.html?notebook=BR_HPR" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">Read More &rarr;</a>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="flex-none w-80 snap-center">
-                            <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                                <img src="https://placehold.co/400x250/e0e0e0/555555?text=Project+2+Image" alt="Project 2" class="w-full h-48 object-cover">
-                                <div class="p-6" data-project-id="project2">
-                                    <h3 class="text-xl font-bold text-gray-900 mb-2">Discounted Cash Flow (DCF) Valuation</h3>
-                                    <p class="text-gray-600 text-sm">
-                                        A valuation of a public company using a DCF model to determine its intrinsic value.
-                                    </p>
-                                    <div class="mt-4">
-                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Valuation</span>
-                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
+                                <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                    <img src="https://placehold.co/400x250/e0e0e0/555555?text=Project+2+Image" alt="Project 2" class="w-full h-48 object-cover">
+                                    <div class="p-6" data-project-id="project2">
+                                        <h3 class="text-xl font-bold text-gray-900 mb-2">Discounted Cash Flow (DCF) Valuation</h3>
+                                        <p class="text-gray-600 text-sm">
+                                            A valuation of a public company using a DCF model to determine its intrinsic value.
+                                        </p>
+                                        <div class="mt-4">
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Valuation</span>
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
+                                        </div>
+                                        <a href="notebook-template.html?notebook=project2" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">Read More &rarr;</a>
                                     </div>
-                                    <a href="notebook-template.html?notebook=project2" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">Read More &rarr;</a>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="flex-none w-80 snap-center">
-                            <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                                <img src="https://placehold.co/400x250/e0e0e0/555555?text=Project+3+Image" alt="Project 3" class="w-full h-48 object-cover">
-                                <div class="p-6" data-project-id="project3">
-                                    <h3 class="text-xl font-bold text-gray-900 mb-2">S&P 500 Stock Analysis Dashboard</h3>
-                                    <p class="text-gray-600 text-sm">
-                                        An interactive dashboard for analyzing the performance of companies in the S&P 500.
-                                    </p>
-                                    <div class="mt-4">
-                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Data Analysis</span>
-                                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Tableau</span>
+                                <div class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                                    <img src="https://placehold.co/400x250/e0e0e0/555555?text=Project+3+Image" alt="Project 3" class="w-full h-48 object-cover">
+                                    <div class="p-6" data-project-id="project3">
+                                        <h3 class="text-xl font-bold text-gray-900 mb-2">S&P 500 Stock Analysis Dashboard</h3>
+                                        <p class="text-gray-600 text-sm">
+                                            An interactive dashboard for analyzing the performance of companies in the S&P 500.
+                                        </p>
+                                        <div class="mt-4">
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Data Analysis</span>
+                                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Tableau</span>
+                                        </div>
+                                        <a href="notebook-template.html?notebook=project3" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">Read More &rarr;</a>
                                     </div>
-                                    <a href="details.html?id=project3" class="mt-4 inline-block text-blue-600 font-bold hover:text-blue-800 transition-colors">Read More &rarr;</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Navigation buttons -->
+                    <button id="projects-left-btn" class="carousel-nav-btn left">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="projects-right-btn" class="carousel-nav-btn right">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -302,5 +370,41 @@
 
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
+    <script>
+        // Custom JavaScript for carousel functionality
+        function setupCarousel(carouselId, leftBtnId, rightBtnId) {
+            const carousel = document.getElementById(carouselId);
+            const leftBtn = document.getElementById(leftBtnId);
+            const rightBtn = document.getElementById(rightBtnId);
+            let scrollPosition = 0;
+
+            function scrollCarousel(direction) {
+                const scrollWidth = carousel.clientWidth;
+                if (direction === 'right') {
+                    scrollPosition += scrollWidth;
+                    if (scrollPosition > carousel.scrollWidth - scrollWidth) {
+                        scrollPosition = 0; // Loop back to the beginning
+                    }
+                } else {
+                    scrollPosition -= scrollWidth;
+                    if (scrollPosition < 0) {
+                        scrollPosition = carousel.scrollWidth - scrollWidth; // Loop to the end
+                    }
+                }
+                carousel.scroll({
+                    left: scrollPosition,
+                    behavior: 'smooth'
+                });
+            }
+
+            leftBtn.addEventListener('click', () => scrollCarousel('left'));
+            rightBtn.addEventListener('click', () => scrollCarousel('right'));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setupCarousel('learning-carousel', 'learning-left-btn', 'learning-right-btn');
+            setupCarousel('projects-carousel', 'projects-left-btn', 'projects-right-btn');
+        });
+    </script>
 </body>
 </html>
