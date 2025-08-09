@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel for Finance and Accounting Expert</title>
+    <!-- Playfair Display font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f7f9fc;
+            color: #1a202c;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        /* Styles for the notebook cell content wrapper */
+        .jp-Cell {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 40px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #3e2723; /* Dark brown for headings */
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        ol {
+            list-style-type: decimal;
+            padding-left: 2rem;
+        }
+
+        /* Links */
+        a {
+            color: #2b6cb0;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #2c5282;
+        }
+
+        /* Strong/Bold text */
+        strong {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        /* Markdown-specific container class for general text */
+        .jp-RenderedHTMLCommon p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Code-specific styling for the notebook content */
+        .jp-CodeMirrorEditor pre, .jp-CodeMirrorEditor code {
+            font-family: monospace;
+            background-color: #f7f9fc;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-size: 0.875rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive video container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin-bottom: 2rem;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: #2b6cb0;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #2c5282;
+        }
+    </style>
+</head>
+<body>
+    <div class="jp-Cell">
+        <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+            <h1>Excel for Finance and Accounting Expert</h1>
+            <p>I've been learning so much from this "Excel for Finance" tutorial, and it's insane how much you can do with just a few functions. This video is like a cheat code for anyone who wants to get serious about finance and modeling. Here's a breakdown of what I'm taking away from it.</p>
+
+            <h2>Video Guide</h2>
+            <p>Below is a video that provides a hands-on walkthrough of key Excel techniques for financial professionals.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/LiWMgC2ICDg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <h2>My Key Functions & What They're For</h2>
+            <p>The tutorial really breaks down how to use a few core functions to build some heavy-duty models. It's not just about knowing them, but knowing when to use them.</p>
+
+            <h3>Data & Reference Functions</h3>
+            <p>These functions are great for pulling data from one place to another efficiently.</p>
+            <ul>
+                <li><strong>VLOOKUP and HLOOKUP:</strong> These are like a quick search function. You use them when you need to find something in a big table and grab a related piece of info. The tutorial showed me they're great for pulling data like prices or dates from a separate sheet of a financial model.</li>
+                <li><strong>INDEX and MATCH:</strong> This is the upgrade to VLOOKUP. It's more flexible because you can search for data vertically or horizontally. You use `MATCH` to find the location of an item, and then `INDEX` to pull the actual data from that spot. It's way more powerful.</li>
+                <li><strong>OFFSET:</strong> This returns a reference to a range that's a specified number of rows and columns away from a starting point. It's super powerful for creating dynamic charts and tables that automatically update as your data grows.</li>
+            </ul>
+
+            <h3>Financial Functions</h3>
+            <p>These are the real finance tools that do the heavy lifting in valuation and modeling.</p>
+            <ul>
+                <li><strong>NPV (Net Present Value):</strong> Calculates the value of a series of future cash flows in today's dollars. It's one of the most fundamental tools for deciding whether to invest in a project.</li>
+                <li><strong>IRR (Internal Rate of Return):</strong> This tells you the return you're getting on an investment. If the `IRR` is higher than your cost of capital, the investment is usually a good idea. It's a key function for capital budgeting.</li>
+                <li><strong>PMT (Payment):</strong> This calculates the payment for a loan based on constant payments and a constant interest rate. Essential for building debt schedules in a financial model.</li>
+                <li><strong>RATE:</strong> This function returns the interest rate for an annuity. It's used to solve for an unknown interest rate when you have all the other variables.</li>
+            </ul>
+
+            <h3>Statistical & Logical Functions</h3>
+            <p>These functions help build smart, dynamic, and error-proof models.</p>
+            <ul>
+                <li><strong>IF, AND, OR:</strong> Used to build smart models that can make decisions. For example, you can use an `IF` statement to calculate a tax rate only if a company is profitable, making the model dynamic.</li>
+                <li><strong>SUMIFS and COUNTIFS:</strong> These functions let you calculate sums or counts based on multiple criteria. This is a must-have for detailed financial reporting and analysis.</li>
+                <li><strong>Geometric Mean (GEOMEAN):</strong> This is a special type of average that's more accurate for calculating investment returns because it accounts for compounding. The tutorial explained that it gives a better picture of performance over time than a simple average.</li>
+                <li><strong>Extrapolation:</strong> This is a key financial modeling skill. Using functions like `FORECAST.LINEAR` and other logic, you can predict future values based on past trends, which is a core part of forecasting revenue and expenses.</li>
+            </ul>
+
+            <h3>Steps for Building a Financial Model in Excel</h3>
+            <p>The video laid out a clear process for building a financial model from scratch. It's not just about the formulas; it's about the workflow.</p>
+            <ol>
+                <li><strong>Get the Data:</strong> You start by grabbing all the historical financial data you can find. This includes the Income Statement, Balance Sheet, and Cash Flow Statement.</li>
+                <li><strong>Organize Your Sheets:</strong> Don't just throw everything in one place. The tutorial teaches you to use separate tabs for inputs, assumptions, calculations, and the final output. This keeps everything clean and easy to follow.</li>
+                <li><strong>Input & Forecast:</strong> You use the historical data to set up your assumptions. Then, you use those assumptions to project the three financial statements into the future. This is where most of the work happens.</li>
+                <li><strong>Connect Everything:</strong> This is the most important step. You have to link all three statements together. For example, Net Income from the Income Statement has to be linked to Retained Earnings on the Balance Sheet. If you mess this up, the whole thing breaks.</li>
+                <li><strong>Check for Errors:</strong> After everything is linked, you audit the model to make sure the Balance Sheet actually balances. If assets don't equal liabilities plus equity, something is wrong.</li>
+            </ol>
+            
+            <a href="notebook-template.html?notebook=BR_HPR" class="button">View My Excel Project &rarr;</a>
+
+            <h2 class="text-2xl font-bold mt-8">References</h2>
+            <ul class="list-disc pl-5 mt-4 text-sm italic text-gray-600">
+                <li><a href="https://corporatefinanceinstitute.com/" target="_blank">Corporate Finance Institute (CFI)</a> - A leading provider of online financial modeling and valuation courses.</li>
+                <li><a href="https://www.wallstreetprep.com/" target="_blank">Wall Street Prep</a> - Another industry-standard resource for financial training.</li>
+                <li><a href="https://www.wallstreetmojo.com/" target="_blank">Wall Street Mojo</a> - A popular online platform with detailed tutorials and examples for financial analysis.</li>
+                <li>Investopedia - A comprehensive online resource for financial education.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

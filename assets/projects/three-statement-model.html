@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-Statement Financial Model</title>
+    <!-- Playfair Display font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f7f9fc;
+            color: #1a202c;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        /* Styles for the notebook cell content wrapper */
+        .jp-Cell {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 40px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #3e2723; /* Dark brown for headings */
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Links */
+        a {
+            color: #2b6cb0;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #2c5282;
+        }
+
+        /* Strong/Bold text */
+        strong {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        /* Markdown-specific container class for general text */
+        .jp-RenderedHTMLCommon p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Code-specific styling for the notebook content */
+        .jp-CodeMirrorEditor pre, .jp-CodeMirrorEditor code {
+            font-family: monospace;
+            background-color: #f7f9fc;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-size: 0.875rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="jp-Cell">
+        <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+            <h1>A Three-Statement Financial Model</h1>
+            <p>A three-statement financial model is a crucial tool that enables organizations to forecast their financial performance. It is built upon three fundamental financial statements: the Income Statement, the Balance Sheet, and the Cash Flow Statement. To construct such a model, it is essential to gather data beforehand.</p>
+
+            <h2>1. The Income Statement</h2>
+            <p><strong>Purpose:</strong> The Income Statement, also known as the Profit and Loss (P&L) statement, illustrates a company's revenue and the expenses incurred from its operating activities over a specific period. Its primary function is to calculate the company's net profit (or loss) by determining the difference between revenue and expenses.</p>
+            <h3>Key Components & Calculations:</h3>
+            <ul>
+                <li><strong>Revenue:</strong> The top line of the model, representing all income generated from core operations. It includes key drivers like new customers, average order value, refunds, and discounts. Gross Revenue is often a primary calculation, with Net Revenue being the result of subtracting refunds and discounts.</li>
+                <li><strong>Cost of Goods Sold (COGS):</strong> Direct costs attributable to the production of the goods or services sold by the company. This includes raw materials, labor, and other direct expenses. Gross Margin is then calculated as Revenue minus COGS, representing the profitability at the product level.</li>
+                <li><strong>Operating Expenses (Opex):</strong> These are indirect costs not directly tied to production but are necessary for business operations. They include general, administrative, and selling expenses (SG&A), such as HR costs, marketing, and rent. Depreciation and Amortization are also included here but are non-cash expenses, making them crucial for cash flow analysis.</li>
+                <li><strong>EBITDA (Earnings Before Interest, Taxes, Depreciation, and Amortization):</strong> A critical valuation metric, calculated as Operating Income (Gross Margin - Opex) plus Depreciation and Amortization. It provides a proxy for a company's cash flow from operations before accounting for capital structure and taxes.</li>
+                <li><strong>Net Income:</strong> The final profit figure on the income statement, representing the company's profitability after all expenses, including interest and taxes, have been deducted.</li>
+            </ul>
+            <p><strong>Linking:</strong> The Income Statement's Net Income flows directly into the Retained Earnings account on the Balance Sheet and serves as the starting point for the Cash Flow Statement. It also links Depreciation and Interest from the Capex Schedule and Balance Sheet, respectively.</p>
+
+            <h2>2. The Balance Sheet</h2>
+            <p><strong>Purpose:</strong> The Balance Sheet provides a snapshot of a company's financial position at a specific point in time. It details the company's assets, liabilities, and shareholders' equity, adhering to the fundamental accounting equation: Assets = Liabilities + Shareholders' Equity.</p>
+            <h3>Key Components & Calculations:</h3>
+            <ul>
+                <li><strong>Assets:</strong>
+                    <ul>
+                        <li><strong>Current Assets:</strong> Assets that are expected to be converted into cash within one year, including Cash, Accounts Receivable (money owed to the company), and Inventory.</li>
+                        <li><strong>Fixed Assets:</strong> Long-term assets used in the business, such as property, plant, and equipment (PP&E). The net value is calculated by subtracting accumulated depreciation from gross fixed assets.</li>
+                    </ul>
+                </li>
+                <li><strong>Liabilities:</strong>
+                    <ul>
+                        <li><strong>Current Liabilities:</strong> Obligations due within one year, such as Accounts Payable (money owed to suppliers) and short-term debt.</li>
+                        <li><strong>Long-Term Debt:</strong> Obligations due beyond one year. The change in this account is linked to the Cash Flow Statement under Financing Activities.</li>
+                    </ul>
+                </li>
+                <li><strong>Shareholders' Equity:</strong>
+                    <ul>
+                        <li><strong>Common Stock:</strong> Represents the funds raised from shareholders.</li>
+                        <li><strong>Retained Earnings:</strong> The cumulative total of a company's profits that have been reinvested in the business rather than paid out as dividends. This key account is where Net Income from the Income Statement is linked.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong>Linking:</strong> The Balance Sheet's fundamental equation must always balance, providing a crucial check for the entire model. Net Income is linked from the Income Statement, while the Cash balance is the final output of the Cash Flow Statement, creating a circular link between all three statements.</p>
+
+            <h2>3. The Cash Flow Statement</h2>
+            <p><strong>Purpose:</strong> The Cash Flow Statement bridges the gap between the accrual-based Income Statement and the Balance Sheet. It shows how cash enters and leaves a business over a specific period, reconciling net income to the actual change in cash.</p>
+            <h3>Categories of Cash Flow:</h3>
+            <ul>
+                <li><strong>Operating Activities:</strong> This section starts with Net Income (from the Income Statement) and adjusts for non-cash items, such as Depreciation and Amortization (add-backs) and changes in working capital (e.g., Accounts Receivable, Accounts Payable).</li>
+                <li><strong>Investing Activities:</strong> This section includes cash flows from buying and selling long-term assets, primarily Capital Expenditures (Capex), which is a crucial linkage from the Balance Sheet.</li>
+                <li><strong>Financing Activities:</strong> This section details cash flows related to a company's capital structure, including issuing or repaying debt and equity, and paying dividends.</li>
+            </ul>
+            <p><strong>Linking:</strong> The final line, "Net Change in Cash," is the total cash generated or used in the period. This amount is added to the beginning cash balance on the Balance Sheet to determine the new ending cash balance, completing the three-statement linkage.</p>
+
+            <h2>Inter-Statement Linkages and Common Issues</h2>
+            <p>The three statements are intricately linked through a series of formulas and connections, forming a single, dynamic model. The accuracy of the entire model hinges on these linkages, particularly the balance check on the Balance Sheet. A model that doesn't balance is a strong indicator of a broken link or an incorrect formula. When built correctly, these models are invaluable for financial forecasting and valuation analysis. Excel is an invaluable tool for building such customized and comprehensive financial models.</p>
+
+            <h2 class="text-2xl font-bold mt-8">References</h2>
+            <ul class="list-disc pl-5 mt-4 text-sm italic text-gray-600">
+                <li>Corporate Finance Institute (CFI) - Financial Modeling & Valuation Analyst (FMVA) Certification Program.</li>
+                <li>Pignataro, Paul. "Financial Modeling and Valuation: A Practical Guide to Investment Banking and Private Equity." </li>
+                <li>Damodaran, Aswath. "Damodaran on Valuation: Security Analysis for Investment and Corporate Finance." </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
