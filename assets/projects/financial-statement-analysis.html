@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Statement Analysis</title>
+    <!-- Playfair Display font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f7f9fc;
+            color: #1a202c;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        /* Styles for the notebook cell content wrapper */
+        .jp-Cell {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 40px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #3e2723; /* Dark brown for headings */
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        ol {
+            list-style-type: decimal;
+            padding-left: 2rem;
+        }
+
+        /* Links */
+        a {
+            color: #2b6cb0;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #2c5282;
+        }
+
+        /* Strong/Bold text */
+        strong {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        /* Markdown-specific container class for general text */
+        .jp-RenderedHTMLCommon p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Code-specific styling for the notebook content */
+        .jp-CodeMirrorEditor pre, .jp-CodeMirrorEditor code {
+            font-family: monospace;
+            background-color: #f7f9fc;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-size: 0.875rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: #2b6cb0;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #2c5282;
+        }
+    </style>
+</head>
+<body>
+    <div class="jp-Cell">
+        <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+            <h1>My Take on Financial Statement Analysis</h1>
+            <p>
+                Financial statement analysis is something I’ve learned is a crucial process for evaluating a company’s financial health. It’s all about digging into the income statement, balance sheet, and cash flow statement to assess things like profitability and liquidity. This analysis helps me and other stakeholders make better decisions about a company’s financial status.
+            </p>
+
+            <h2>Why I Think This is Important</h2>
+            <p>
+                I’ve come to realize that analyzing financial statements is a game-changer. It gives me a clear and comprehensive view of a company's financial health, which is vital for making informed decisions. It helps me stay on top of market trends and lets me see how well a company is managing its resources. For investors, it's a great way to gauge a company’s growth potential before making any decisions.
+            </p>
+            <p>
+                The biggest benefits I’ve found so far include:
+                <ul>
+                    <li><b>Informed Decision Making:</b> It gives me the insights I need to make smart strategic decisions, whether it's about expanding operations or cutting costs.</li>
+                    <li><b>Performance Evaluation:</b> I can track a company's performance over time to spot strengths and weaknesses.</li>
+                    <li><b>Risk Management:</b> It helps me understand where a company might be vulnerable, like cash flow issues or too much debt, so I can take proactive steps.</li>
+                    <li><b>Investor Confidence:</b> I know that if I can show detailed analysis, it helps attract and keep investors because it proves the company knows how to generate returns.</li>
+                    <li><b>Regulatory Compliance:</b> This kind of regular analysis ensures businesses stay within legal requirements, which is super important.</li>
+                </ul>
+                For me as a financial analyst, the main goal is to measure a company's performance over time and compare it to others. This data is the foundation for building financial models to forecast things like revenue and profitability.
+            </p>
+
+            <h2>The Key Financial Statements</h2>
+            <p>
+                My analysis focuses on three main financial statements that all tell a different part of the story:
+                <ul>
+                    <li><b>Income Statement:</b> I think of this as the company's "report card." It shows a summary of revenues, expenses, and profits over a specific period. It helps me understand how well a company is generating profit and managing its expenses. I usually start my analysis here, looking at revenue and margins.</li>
+                    <li><b>Balance Sheet:</b> This is like a "snapshot" of a company's financial position at a single point in time. It shows me what the company owns (assets), what it owes (liabilities), and the shareholders’ equity. It's great for assessing a company's liquidity and debt levels.</li>
+                    <li><b>Cash Flow Statement:</b> This one is really important because it shows the actual cash coming in and going out. It breaks down cash movements from operating, investing, and financing activities. A lot of investors consider this the most crucial statement because it shows if a company is truly making money.</li>
+                </ul>
+                These three statements are all connected. You can’t analyze one without understanding the others. I also learned that public companies have to follow GAAP, while private companies have a bit more flexibility in their accounting.
+            </p>
+
+            <h2>Techniques for My Financial Analysis</h2>
+            <p>
+                I use a few common techniques to perform my analysis:
+                <ul>
+                    <li><b>Horizontal Analysis:</b> I use this to compare data across multiple years. It helps me spot growth trends and see how different line items are changing over time. For example, I can easily calculate the year-over-year percentage change in revenue.</li>
+                    <li><b>Vertical Analysis:</b> This technique helps me see how every line item on a financial statement compares to a base figure as a percentage. For the income statement, I look at everything as a proportion of total revenue. It’s useful for understanding how efficient a company is.</li>
+                    <li><b>Ratio Analysis:</b> This is a huge part of my work. It's all about calculating statistical relationships between different line items to assess profitability, liquidity, and leverage. I use it to get a feel for a company's financial health and potential for growth.</li>
+                </ul>
+            </p>
+
+            <h2>Key Metrics and Ratios I Use</h2>
+            <p>
+                There's a huge variety of ratios out there, but I focus on a few key ones to get the job done.
+                <ul>
+                    <li><b>Income Statement Ratios (Profitability):</b> I look at things like gross profit margin and net profit margin to see how efficiently a company is generating profits. Earnings Per Share (EPS) is a great metric to see how much profit the company makes for each outstanding share.</li>
+                    <li><b>Balance Sheet Ratios (Liquidity & Leverage):</b> I check liquidity ratios like the quick ratio and current ratio to see if a company can cover its short-term debt. I also look at leverage ratios like debt-to-equity to understand how much debt the company is relying on.</li>
+                    <li><b>Cash Flow Statement Ratios (Cash Management):</b> The Operating Cash Flow Ratio is my go-to here. It shows a company's ability to generate cash from its core operations. Free Cash Flow (FCF) Yield is also great for seeing if a company is generating enough cash relative to its market value.</li>
+                    <li><b>Comprehensive Ratios:</b> I also use Return on Assets (ROA) and Return on Equity (ROE). These are great for seeing how effectively a company is using its assets and shareholder funds to generate profit. The DuPont analysis helps me break down ROE even further into profitability, efficiency, and leverage.</li>
+                </ul>
+            </p>
+            <p class="mt-8 text-sm italic text-gray-600">
+                Sources: Corporate Finance Institute, Investopedia, NISM
+            </p>
+            <a href="notebook-template.html?notebook=financial-analysis-project" class="button">View A Financial Analysis Project &rarr;</a>
+        </div>
+    </div>
+</body>
+</html>
