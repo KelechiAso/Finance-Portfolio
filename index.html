@@ -17,9 +17,40 @@
     <style>
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+            gap: 16px; /* A smaller gap for mobile */
+            
+            /* --- Mobile: Horizontal Scrolling Row --- */
+            grid-auto-flow: column; /* Lays out cards in a single row */
+            grid-auto-columns: 85%; /* Each card takes up 85% of the container's width */
+            overflow-x: auto;       /* Enables horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Makes scrolling 'snap' nicely to each card */
+            padding: 4px 4px 16px 4px; /* Adds padding so shadows aren't cut off */
+            
+            /* Hides the scrollbar for a cleaner look */
+            scrollbar-width: none; /* For Firefox */
+            -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+    }
+
+        /* Hides scrollbar for Chrome, Safari, and Opera */
+        .card-grid::-webkit-scrollbar {
+            display: none;
         }
+
+        /* This helps the scroll-snap work correctly on each card */
+        .card-grid > div {
+            scroll-snap-align: start;
+        }
+
+/* --- Desktop (768px and up): Revert to 3-Column Grid --- */
+        @media (min-width: 768px) {
+                .card-grid {
+                    grid-auto-flow: row; /* Change flow back to default */
+                    grid-template-columns: repeat(3, 1fr); /* Create the 3-column grid */
+                    overflow-x: hidden; /* Hide horizontal scroll on desktop */
+                    gap: 24px; /* Restore original desktop gap */
+                    padding: 0;
+                }
+            }
 
         .carousel-container {
             display: flex;
