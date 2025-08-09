@@ -12,33 +12,35 @@
     <link rel="stylesheet" href="assets/css/notebook-background.css">
 
     <style>
-        /* Target the container where content is injected */
+        /* --- Mobile-First Font Sizes --- */
+
+        /* Set a comfortable base font size for mobile */
         #notebook-content {
-            /* This ensures a base font size for calculations */
-            font-size: 16px; 
+            font-size: 15px; 
         }
 
-        /* Give all headings more vertical space */
+        /* Keep headings clean and readable on small screens */
         #notebook-content h1,
         #notebook-content h2,
         #notebook-content h3 {
-            line-height: 1.3; /* Tighter for headings */
-            margin-bottom: 0.75em; /* Space below the heading */
-            margin-top: 1.5em; /* Space above the heading */
+            line-height: 1.3;
+            margin-bottom: 0.75em;
+            margin-top: 1.5em;
+            letter-spacing: -0.02em; /* A subtle tweak for headings */
         }
         
         #notebook-content h1 {
-            font-size: 2.25em; /* ~36px */
+            font-size: 1.8em; /* ~27px on mobile, much smaller than before */
         }
         
         #notebook-content h2 {
-            font-size: 1.75em; /* ~28px */
+            font-size: 1.4em; /* ~21px on mobile */
         }
 
-        /* The most important fix: Give paragraphs breathing room */
+        /* Give paragraphs breathing room */
         #notebook-content p {
-            line-height: 1.75; /* Increase line spacing significantly */
-            margin-bottom: 1.25em; /* Add space between paragraphs */
+            line-height: 1.75; 
+            margin-bottom: 1.25em;
         }
 
         /* Also apply better spacing to lists */
@@ -47,6 +49,23 @@
             line-height: 1.75;
             margin-bottom: 1.25em;
             padding-left: 1.5em;
+        }
+
+        /* --- Desktop Font Size Adjustments --- */
+        
+        /* Using a media query to scale up fonts for larger screens (tablets and desktops) */
+        @media (min-width: 768px) {
+            #notebook-content {
+                font-size: 17px; /* Slightly larger base font for desktop */
+            }
+
+            #notebook-content h1 {
+                font-size: 2.5em; /* ~42px on desktop */
+            }
+
+            #notebook-content h2 {
+                font-size: 2em; /* ~34px on desktop */
+            }
         }
     </style>
 </head>
