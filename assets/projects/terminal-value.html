@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Guide to DCF Analysis</title>
+    <title>Terminal Value Calculation</title>
     <!-- Playfair Display font from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -126,87 +126,67 @@
 <body>
     <div class="jp-Cell">
         <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-            <h1>My Guide to DCF Analysis</h1>
-            <p>I've learned that **DCF** (Discounted Cash Flow) analysis is one of the most powerful valuation methods for determining a company's intrinsic value. The core idea is simple but profound: a company's value today is the sum of all the cash it is expected to generate in the future, with each of those future cash flows "discounted" by a rate that reflects the time value of money and risk.</p>
+            <h1>My Learning Journey: Terminal Value Calculation</h1>
+            <p>
+                I've learned that the **Terminal Value (TV)** is a crucial part of a DCF model that represents a company's value beyond the explicit forecast period. Since no one can accurately forecast a company’s cash flows forever, this is the way I account for all future cash flows after the first 5-10 years. It often accounts for a huge portion (60-80%) of the total DCF valuation, which is why understanding its calculation is so critical.
+            </p>
 
-            <h2>What is DCF?</h2>
-            <p>The goal of a DCF is to figure out what a company is truly worth, independent of market speculation. This is achieved by forecasting the company's future **Free Cash Flow to Firm (FCFF)**, which is the cash available to all of its capital providers (both debt and equity holders). The process involves two main components:</p>
-
-            <h3>1. Forecasting Period</h3>
-            <p>I start by projecting the company's FCFF for a specific period, typically 5 to 10 years. This requires making detailed assumptions about revenue growth, operating expenses, capital expenditures (CapEx), and changes in working capital. The FCFF is calculated like this:</p>
-            <pre><code>
-FCFF = EBIT * (1 - Tax Rate) + Depreciation & Amortization - CapEx - Change in Net Working Capital
-            </code></pre>
-            <p>After forecasting, all of these projected cash flows are then discounted back to their present value.</p>
-
-            <h3>2. Terminal Value</h3>
-            <p>Since I can't forecast a company's cash flows forever, I calculate a **Terminal Value (TV)**. This represents the value of the company at the end of my forecasting period and beyond. It can be calculated in two ways:</p>
+            <h2>Method 1: The Perpetuity Growth Method</h2>
+            <p>This is the first method I learned for calculating Terminal Value. It assumes that a company's Free Cash Flow will grow at a constant, sustainable rate forever. I think of it as a modified version of the perpetuity formula. It takes the final year's projected cash flow, grows it by a conservative rate, and then divides it by the difference between the discount rate and the growth rate.</p>
+            <p>The formula I use is:</p>
+            <div class="formula-display">
+                $$Terminal\ Value = \frac{FCFF_n \times (1+g)}{WACC-g}$$
+            </div>
+            <p>Here's how I break down the components:</p>
             <ul>
-                <li><strong>Perpetuity Growth Model:</strong> This assumes the company's cash flows will grow at a stable, perpetual rate forever. I use the following formula, with a conservative perpetuity growth rate (g).</li>
-                <pre><code>
-Terminal Value = (FCFF_YearN * (1 + g)) / (WACC - g)
-                </code></pre>
-                <li><strong>Exit Multiple Method:</strong> This applies a valuation multiple (like EV/EBITDA) to the final year's EBITDA to determine the terminal value.</li>
+                <li>$FCFF_n$ is the Free Cash Flow in the final year of my explicit forecast period.</li>
+                <li>$g$ is the Perpetuity Growth Rate, which I assume to be a conservative long-term growth rate, typically not exceeding the long-term nominal GDP growth rate of the economy.</li>
+                <li>WACC is the Weighted Average Cost of Capital, the discount rate I use in the DCF model.</li>
             </ul>
+            <p><strong>Example:</strong> Let's use the Tech Innovators Inc. example from before:</p>
+            <pre><code>
+FCFF_5 = $50 million
+WACC = 8.21%
+g = 2.5%
+            </code></pre>
+            <p>Using the formula, my calculation is:</p>
+            <pre><code>
+Terminal Value = (50M * (1 + 0.025)) / (0.0821 - 0.025)
+Terminal Value = 51.25M / 0.0571
+Terminal Value = $897.55M
+            </code></pre>
+            <p>This gives me the value of the company at the end of Year 5. This value must still be discounted back to the present day to be used in my DCF model.</p>
+            
+            <h2>Method 2: The Exit Multiple Method</h2>
+            <p>This is another method I use to estimate the Terminal Value, and it's often a good way to cross-check my first method. It involves applying a valuation multiple, like EV/EBITDA, to a company's final year's EBITDA. The idea is that a company will be valued at the end of the forecast period based on what similar companies are trading for today.</p>
+            <p>The formula is as follows:</p>
+            <div class="formula-display">
+                Terminal\ Value = FCFF_n \times EV/EBITDA_{multiple}
+            </div>
+            <p><strong>Example:</strong> Continuing with Tech Innovators Inc.</p>
+            <pre><code>
+Projected EBITDA for Year 5 = $75 million
+Average EV/EBITDA multiple for similar companies = 10x
+            </code></pre>
+            <p>Using the formula, my calculation is:</p>
+            <pre><code>
+Terminal Value = $75M * 10
+Terminal Value = $750M
+            </code></pre>
+            <p>This value of $750M would then be discounted back to its present value and added to the present value of the forecasted cash flows to get the company's total intrinsic value.</p>
+            
+            <h2>Conclusion</h2>
+            <p>Both methods are commonly used, and a robust DCF analysis will often calculate the Terminal Value using both methods and then average the results or use one to cross-check the other. It's a critical part of my valuation process, and understanding both methods helps me build a more accurate and reliable model.</p>
 
-            <h2>How DCF is Used in Finance</h2>
-            <p>I find DCF to be central to many strategic and investment decisions:</p>
-            <ul>
-                <li><strong>Investment Decisions:</strong> I use DCF to determine if an investment is worthwhile. If the intrinsic value I calculate is higher than the current market price, the investment is considered attractive.</li>
-                <li><strong>Mergers and Acquisitions (M&A):</strong> DCF is a critical tool for determining a fair price for a target company. I'll use a DCF model to analyze the cash flows I expect to receive from the acquisition.</li>
-                <li><strong>Capital Budgeting:</strong> Companies use DCF to evaluate the viability of new projects. The expected cash flows from a new project are discounted to see if it creates value for the firm.</li>
+            <h2 class="text-2xl font-bold mt-8">References</h2>
+            <ul class="list-disc pl-5 mt-4 text-sm italic text-gray-600">
+                <li><a href="https://corporatefinanceinstitute.com/" target="_blank">Corporate Finance Institute (CFI)</a> - A leading provider of online financial modeling and valuation courses.</li>
+                <li><a href="https://www.investopedia.com/" target="_blank">Investopedia</a> - A comprehensive online resource for financial education.</li>
+                <li>Pignataro, Paul. "Financial Modeling and Valuation: A Practical Guide to Investment Banking and Private Equity."</li>
+                <li>Rosenbaum, Joshua, and Joshua Pearl. "Investment Banking: Valuation, Leveraged Buyouts, and Mergers & Acquisitions."</li>
             </ul>
             
-            <h2>Example Calculation</h2>
-            <p>I'll continue with "Tech Innovators Inc." and do a simplified DCF analysis. My assumptions are based on my WACC from a previous guide:</p>
-            <pre><code>
-Assumptions:
-Forecast Period: 5 years
-WACC: 8.21%
-FCFF Projections:
-Year 1: $30 million
-Year 2: $35 million
-Year 3: $40 million
-Year 4: $45 million
-Year 5: $50 million
-Perpetuity Growth Rate (g): 2.5%
-            </code></pre>
-            
-            <h3>Step 1: Discount the Forecasted Cash Flows</h3>
-            <p>I use the WACC as my discount rate to find the present value of each cash flow. I'll sum them up to get the total PV.</p>
-            <pre><code>
-PV of FCFF = 
-(30M / (1+0.0821)^1) + (35M / (1+0.0821)^2) + ...
-Sum of Discounted Cash Flows = $155.93M
-            </code></pre>
-
-            <h3>Step 2: Calculate the Terminal Value (TV)</h3>
-            <p>I'll use the Perpetuity Growth Model to calculate the value of the company after year 5.</p>
-            <pre><code>
-TV at Year 5 = (FCFF_Year6) / (WACC - g)
-TV at Year 5 = (50M * (1+0.025)) / (0.0821 - 0.025) = $897.55M
-            </code></pre>
-            <p>I then have to discount this Terminal Value back to its present value, which gives me a PV of TV of $602.82M.</p>
-
-            <h3>Step 3: Calculate the Final Enterprise Value</h3>
-            <p>The final Enterprise Value is the sum of the PV of the forecasted cash flows and the PV of the terminal value.
-            <pre><code>
-Enterprise Value = $155.93M + $602.82M = $758.75M
-            </code></pre>
-            <p>To get the value of equity, I subtract the company's net debt ($200M).</p>
-            <pre><code>
-Equity Value = $758.75M - $200M = $558.75M
-            </code></pre>
-            
-            <h2>Key Limitations of DCF</h2>
-            <p>While DCF is a robust method, its reliance on assumptions makes it susceptible to error. The main limitations I've learned about are:</p>
-            <ul>
-                <li><strong>Sensitivity to Assumptions:</strong> A DCF valuation can change drastically with small changes in the perpetuity growth rate or the WACC. I always perform a sensitivity analysis to see a range of possible outcomes.</li>
-                <li><strong>"Garbage In, Garbage Out":</strong> The accuracy of the DCF is entirely dependent on the quality of my financial projections. If my assumptions are flawed, the final valuation will be flawed.</li>
-                <li><strong>The Terminal Value Problem:</strong> The terminal value often accounts for 60-80% of a DCF's final value, which means the model is highly reliant on my assumptions about what happens far into the future.</li>
-            </ul>
-
-            <a href="notebook-template.html?notebook=dcf-project" class="button">View My DCF Project &rarr;</a>
+            <a href="notebook-template.html?notebook=terminal-value-project" class="button">View My Terminal Value Project &rarr;</a>
         </div>
     </div>
 </body>
