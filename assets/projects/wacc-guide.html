@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Guide to WACC</title>
+    <!-- Playfair Display font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f7f9fc;
+            color: #1a202c;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        /* Styles for the notebook cell content wrapper */
+        .jp-Cell {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 40px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #3e2723; /* Dark brown for headings */
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        ol {
+            list-style-type: decimal;
+            padding-left: 2rem;
+        }
+
+        /* Links */
+        a {
+            color: #2b6cb0;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #2c5282;
+        }
+
+        /* Strong/Bold text */
+        strong {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        /* Markdown-specific container class for general text */
+        .jp-RenderedHTMLCommon p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Code-specific styling for the notebook content */
+        .jp-CodeMirrorEditor pre, .jp-CodeMirrorEditor code {
+            font-family: monospace;
+            background-color: #f7f9fc;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-size: 0.875rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: #2b6cb0;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #2c5282;
+        }
+        
+        .formula-display {
+            font-size: 1.25rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            font-style: italic;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="jp-Cell">
+        <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+            <h1>My Guide to WACC</h1>
+            <p>I've learned that the **WACC** (Weighted Average Cost of Capital) is a fundamental concept in finance that helps me understand how much a company should earn on its investments to satisfy both its debt and equity investors. It’s like a benchmark for success, representing the minimum return a company must achieve on a new project to create value for its stakeholders.</p>
+
+            <h2>What is WACC?</h2>
+            <p>I see WACC as the weighted average of the cost of a company's two main sources of capital: equity and debt. It is a crucial discount rate that I use in my financial models, especially for a Discounted Cash Flow (DCF) analysis, to bring future cash flows to their present value. A company's capital structure—the mix of debt and equity it uses to fund its operations—is a key factor in calculating WACC.</p>
+            <p>The formula I use is:</p>
+            <pre><code>
+WACC = (E/V * Re) + (D/V * Rd * (1 - Tc))
+            </code></pre>
+            <p>Breaking down the components of the formula has been really helpful for my understanding:</p>
+            <ul>
+                <li><strong>E/V:</strong> This is the proportion of equity in the company's capital structure. $E$ is the market value of the company's equity (Market Cap), and $V$ is the total market value of the firm's financing (Equity + Debt).</li>
+                <li><strong>$R_e$ (Cost of Equity):</strong> This is the return required by equity investors for the risk they take. I usually calculate this using the Capital Asset Pricing Model (CAPM).</li>
+                <li><strong>D/V:</strong> This is the proportion of debt in the company's capital structure. $D$ is the market value of the company's debt.</li>
+                <li><strong>$R_d$ (Cost of Debt):</strong> This is the return required by debt holders. This is usually the effective interest rate a company pays on its debt.</li>
+                <li><strong>$T_c$ (Tax Rate):</strong> This is the corporate tax rate. The term $(1 - T_c)$ is known as the tax shield because interest payments on debt are tax-deductible, reducing the effective cost of debt.</li>
+            </ul>
+            
+            <h2>How I Use WACC in Finance</h2>
+            <p>The implications of WACC are central to many financial decisions I analyze:</p>
+            <ul>
+                <li><strong>Capital Budgeting and Investment Decisions:</strong> I think of a company's WACC as its hurdle rate. If a new project is expected to return more than the WACC, it's a value-creating investment. If the expected return is lower, the project would destroy value for shareholders and should not be undertaken.</li>
+                <li><strong>Valuation:</strong> As the discount rate in a DCF model, I use WACC to calculate the present value of a company's projected future cash flows. A lower WACC leads to a higher valuation, while a higher WACC leads to a lower valuation. This is because a lower WACC implies a lower-risk company, and investors are willing to pay more for its cash flows.</li>
+                <li><strong>Corporate Strategy:</strong> A company's WACC can influence its strategic decisions. For example, a company with a high WACC may be incentivized to reduce its debt or focus on less risky, higher-return projects.</li>
+            </ul>
+            
+            <h2>Example Calculation</h2>
+            <p>To put this into practice, let's imagine I'm analyzing a company, "Tech Innovators Inc." Here are its financial details:</p>
+            <pre><code>
+Market Capitalization (E): $500 million
+Market Value of Debt (D): $200 million
+Cost of Equity (Re): 10%
+Cost of Debt (Rd): 5%
+Corporate Tax Rate (Tc): 25%
+            </code></pre>
+            <p><strong>Step 1: Calculate the Total Value of Capital (V)</strong></p>
+            <pre><code>
+V = E + D
+V = $500 million + $200 million = $700 million
+            </code></pre>
+            <p><strong>Step 2: Calculate the Weights of Equity and Debt</strong></p>
+            <pre><code>
+Equity Weight (E/V): $500 million / $700 million = 0.714 or 71.4%
+Debt Weight (D/V): $200 million / $700 million = 0.286 or 28.6%
+            </code></pre>
+            <p><strong>Step 3: Calculate the WACC</strong></p>
+            <pre><code>
+WACC = (E/V * Re) + (D/V * Rd * (1 - Tc))
+WACC = (0.714 * 10%) + (0.286 * 5% * (1 - 0.25))
+WACC = (0.0714) + (0.286 * 0.05 * 0.75)
+WACC = 0.0714 + 0.010725
+WACC = 0.082125 or 8.21%
+            </code></pre>
+            <p>The WACC for Tech Innovators Inc. is 8.21%. This means that on average, the company must generate at least an 8.21% return on its investments to satisfy its investors. If a new project is expected to return only 7%, it would not be a worthwhile investment because it would destroy shareholder value.</p>
+
+            <h2>Limitations and Things to Keep in Mind</h2>
+            <p>WACC is a powerful tool, but it has a few limitations I've learned to keep in mind:</p>
+            <ul>
+                <li><strong>Assumption of Constant Capital Structure:</strong> The WACC formula assumes a company will maintain a constant debt-to-equity ratio, which may not be true.</li>
+                <li><strong>Difficulty in Determining Components:</strong> Calculating the WACC requires estimating the cost of equity and debt, as well as the market value of each. These are often difficult to determine accurately, especially for private companies.</li>
+                <li><strong>Not Suitable for All Projects:</strong> WACC is the average cost of capital for the entire firm. It may not be the appropriate hurdle rate for a project with a very different risk profile than the company's overall operations. In such cases, an adjusted discount rate for that specific project would be more accurate.</li>
+            </ul>
+            
+            <a href="notebook-template.html?notebook=wacc-project" class="button">View My WACC Project &rarr;</a>
+        </div>
+    </div>
+</body>
+</html>

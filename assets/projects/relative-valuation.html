@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relative Valuation</title>
+    <!-- Playfair Display font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f7f9fc;
+            color: #1a202c;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        /* Styles for the notebook cell content wrapper */
+        .jp-Cell {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 40px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #3e2723; /* Dark brown for headings */
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        ol {
+            list-style-type: decimal;
+            padding-left: 2rem;
+        }
+
+        /* Links */
+        a {
+            color: #2b6cb0;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #2c5282;
+        }
+
+        /* Strong/Bold text */
+        strong {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        /* Markdown-specific container class for general text */
+        .jp-RenderedHTMLCommon p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Code-specific styling for the notebook content */
+        .jp-CodeMirrorEditor pre, .jp-CodeMirrorEditor code {
+            font-family: monospace;
+            background-color: #f7f9fc;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-size: 0.875rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: #2b6cb0;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #2c5282;
+        }
+        
+        .formula-display {
+            font-size: 1.25rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            font-style: italic;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="jp-Cell">
+        <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+            <h1>My Take on Relative Valuation (Comparable Companies Analysis)</h1>
+            <p>I’ve learned that **relative valuation** is a method of determining a company's value by comparing it to similar publicly traded companies using financial multiples. It gives me a market-based perspective on valuation, reflecting how investors are currently pricing comparable businesses.</p>
+
+            <h2>Understanding Relative Valuation</h2>
+            <p>Unlike a DCF analysis, which focuses on a company's intrinsic value, relative valuation looks at how the market is currently valuing similar assets. I’ve found the underlying principle to be simple: comparable assets should trade at similar price multiples. By analyzing these multiples for a peer group, I can derive an implied valuation range for the target company. I use this method often because it’s quicker and easier to implement than a DCF, and it provides a real-time market perspective. However, its accuracy heavily relies on selecting truly comparable companies.</p>
+            
+            <h3>Key Steps in Relative Valuation</h3>
+            <p>The process I follow to perform a relative valuation typically involves these steps:</p>
+            <ol>
+                <li>
+                    <strong>Identify Comparable Companies:</strong> This is the most crucial step. I need to find publicly traded companies that are similar to the target company in terms of industry, business model, size, growth prospects, and risk profile. The more similar the peer group, the more reliable the valuation.
+                </li>
+                <li>
+                    <strong>Select Relevant Financial Multiples:</strong> Based on the industry, I choose appropriate financial multiples. Common multiples include:
+                    <ul>
+                        <li><strong>Enterprise Value to EBITDA (EV/EBITDA):</strong> This is a very useful metric because it’s great for comparing companies regardless of their capital structure or tax rates.</li>
+                        <li><strong>Price to Earnings (P/E):</strong> I use this for profitable companies to see how much investors are willing to pay per dollar of earnings.</li>
+                        <li><strong>Price to Revenue (P/S):</strong> This is useful for early-stage or high-growth companies that may not have earnings yet.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Calculate and Benchmark Multiples:</strong> I gather the necessary financial data for each comparable company and calculate the chosen multiples. Then, I analyze the range and central tendency (like the median) of the multiples. I always look out for any outliers that might not be truly comparable and adjust my analysis.
+                </li>
+                <li>
+                    <strong>Apply Multiples to the Target Company:</strong> Finally, I apply the benchmark multiple (e.g., the median from the comparable group) to the target company's corresponding financial data to arrive at an implied valuation range.
+                </li>
+            </ol>
+            
+            <h3>Example of a Relative Valuation</h3>
+            <p>Let's say I'm valuing a private software company. I identify a peer group of three publicly traded companies with similar business models and growth rates. Here's a look at their valuation multiples:</p>
+            <pre><code>
+Company     EV ($M)    EBITDA ($M)    EV/EBITDA Multiple
+-------------------------------------------------------
+Comp A        $500           $50              10.0x
+Comp B        $750           $60              12.5x
+Comp C        $600           $55              10.9x
+-------------------------------------------------------
+Average EV/EBITDA multiple = 11.13x
+            </code></pre>
+            <p>Now, let's say the private software company I'm valuing has an estimated EBITDA of $45 million. Using the average multiple, my calculation for the implied Enterprise Value would be:</p>
+            <pre><code>
+Implied EV = Target Company EBITDA * Average EV/EBITDA Multiple
+Implied EV = $45 million * 11.13 = $500.85 million
+            </code></pre>
+            <p>To get the implied equity value, I would then subtract the private company's net debt. If its net debt is $50 million, the implied equity value would be $450.85 million.</p>
+
+            <h3>Advantages and Disadvantages</h3>
+            <p>I've learned that every valuation method has its pros and cons:</p>
+            <ul>
+                <li><strong>Advantages:</strong> It's a quick and market-based method that reflects current market sentiment. It's also often easier to implement than a DCF.</li>
+                <li><strong>Disadvantages:</strong> Its accuracy is highly sensitive to my choice of comparable companies. It also assumes the market is efficient, which isn't always true, and it doesn't give me as much insight into a company's fundamental value drivers as a DCF.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-8">References</h2>
+            <ul class="list-disc pl-5 mt-4 text-sm italic text-gray-600">
+                <li><a href="https://corporatefinanceinstitute.com/resources/valuation/comparable-company-analysis-ccs/" target="_blank">Corporate Finance Institute (CFI)</a> - A great resource for step-by-step guides on Comparable Company Analysis.</li>
+                <li><a href="https://www.investopedia.com/terms/r/relativevaluation.asp" target="_blank">Investopedia: Relative Valuation</a> - Provides a clear overview of the concepts and methods.</li>
+                <li>Pignataro, Paul. "Financial Modeling and Valuation: A Practical Guide to Investment Banking and Private Equity."</li>
+                <li>Rosenbaum, Joshua, and Joshua Pearl. "Investment Banking: Valuation, Leveraged Buyouts, and Mergers & Acquisitions."</li>
+            </ul>
+            
+            <a href="notebook-template.html?notebook=relative-valuation-project" class="button">View My Relative Valuation Project &rarr;</a>
+        </div>
+    </div>
+</body>
+</html>

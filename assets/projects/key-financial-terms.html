@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Financial Modeling and Valuation Terminology</title>
+    <!-- Playfair Display font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #f7f9fc;
+            color: #1a202c;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        /* Styles for the notebook cell content wrapper */
+        .jp-Cell {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 40px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #3e2723; /* Dark brown for headings */
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        ol {
+            list-style-type: decimal;
+            padding-left: 2rem;
+        }
+
+        /* Links */
+        a {
+            color: #2b6cb0;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #2c5282;
+        }
+
+        /* Strong/Bold text */
+        strong {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        /* Markdown-specific container class for general text */
+        .jp-RenderedHTMLCommon p {
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Code-specific styling for the notebook content */
+        .jp-CodeMirrorEditor pre, .jp-CodeMirrorEditor code {
+            font-family: monospace;
+            background-color: #f7f9fc;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-size: 0.875rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: #2b6cb0;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #2c5282;
+        }
+        
+        .formula-display {
+            font-size: 1.25rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            font-style: italic;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="jp-Cell">
+        <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+            <h1>My Take on Key Financial Modeling and Valuation Terminology</h1>
+            <p>Financial modeling and valuation rely on a specific language to describe a company's financial health and future prospects. As part of my learning journey, I've been documenting these key terms to build a strong foundation. Here are some of the most fundamental terms I've encountered and how I understand them.</p>
+
+            <h2>Shares and Market Capitalization</h2>
+            <ul>
+                <li>
+                    <strong>Shares (Stock):</strong> I think of a share as a single unit of ownership in a company. When I buy a share, I own a small piece of that company. Companies issue different classes of shares, most commonly common stock, which gives shareholders voting rights, and preferred stock, which generally doesn't have voting rights but has a higher claim on dividends and assets.
+                </li>
+                <li>
+                    <strong>NOSH (Number of Shares Outstanding):</strong> This refers to the total number of a company's shares that are currently held by all its shareholders, including institutional investors and the general public. It's a critical number for calculating market capitalization and earnings per share.
+                </li>
+                <li>
+                    <strong>Market Capitalization:</strong> This is the total value of a company in the stock market. I calculate it by multiplying the current stock price by the number of shares outstanding. It represents what the market believes a company is worth.
+                    <div class="formula-display">
+                        Market Cap = Current Stock Price × Shares Outstanding
+                    </div>
+                </li>
+            </ul>
+
+            <h2>Financial Statement and Accounting Concepts</h2>
+            <ul>
+                <li>
+                    <strong>Net Debt:</strong> This is a measure of a company's financial leverage. I calculate it as a company's total debt minus its cash and cash equivalents. A positive net debt indicates more debt than cash, while a negative number (net cash) means the company holds more cash than debt. It's often used in valuation as a more accurate representation of a company's debt burden than total debt alone.
+                </li>
+                <li>
+                    <strong>Minority Interests:</strong> I learned this refers to a portion of a subsidiary company's equity that is not owned by the parent company. When a parent company owns more than 50% but less than 100% of another company, it must report 100% of the subsidiary's financials on its consolidated statements. The portion of the subsidiary's net income that belongs to the other shareholders is deducted as "minority interest."
+                </li>
+                <li>
+                    <strong>EBITDA (Earnings Before Interest, Taxes, Depreciation, and Amortization):</strong> This is a measure of a company's overall financial performance and is a key metric I use in my models. By removing the effects of non-cash expenses like depreciation and amortization, as well as interest and taxes, EBITDA provides a clearer picture of a company's operational profitability and cash flow. It's widely used in valuation methods, particularly in the calculation of enterprise value.
+                    <div class="formula-display">
+                        EBITDA = Operating Income + Depreciation & Amortization
+                    </div>
+                </li>
+            </ul>
+
+            <h2>Valuation Methods and Metrics</h2>
+            <ul>
+                <li>
+                    <strong>DCF (Discounted Cash Flow):</strong> The DCF method is a powerful valuation technique I use to estimate the value of an investment based on its expected future cash flows. The core principle is that an asset's value is the sum of its future cash flows, discounted back to their present value. This involves projecting a company's free cash flow for a specific period and then calculating a terminal value for the period after that, all discounted by the Weighted Average Cost of Capital (WACC).
+                    <div class="formula-display">
+                        $DCF Value = \sum_{t=1}^{n} \frac{FCF_t}{(1+WACC)^t} + \frac{Terminal Value}{(1+WACC)^n}$
+                    </div>
+                </li>
+                <li>
+                    <strong>WACC (Weighted Average Cost of Capital):</strong> WACC represents the average rate a company is expected to pay to finance its assets. It's the weighted average of the cost of all sources of capital, including debt and equity. It's a critical component of the DCF model, as I use it as the discount rate to bring future cash flows to their present value. A lower WACC indicates a more stable and attractive company to investors.
+                </li>
+                <li>
+                    <strong>Perpetuity Growth Rate:</strong> This is the assumed constant growth rate of a company's free cash flow forever into the future. I use it in the terminal value calculation of a DCF model to represent the value of the company beyond the explicit forecast period. It's typically a small, conservative number, often less than or equal to the long-term expected GDP growth rate of the economy.
+                </li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-8">References</h2>
+            <ul class="list-disc pl-5 mt-4 text-sm italic text-gray-600">
+                <li><a href="https://corporatefinanceinstitute.com/" target="_blank">Corporate Finance Institute (CFI)</a></li>
+                <li><a href="https://www.investopedia.com/" target="_blank">Investopedia</a></li>
+                <li>Pignataro, Paul. "Financial Modeling and Valuation: A Practical Guide to Investment Banking and Private Equity."</li>
+                <li>Rosenbaum, Joshua, and Joshua Pearl. "Investment Banking: Valuation, Leveraged Buyouts, and Mergers & Acquisitions."</li>
+            </ul>
+            
+            <a href="notebook-template.html?notebook=valuation-project" class="button">View A Valuation Project &rarr;</a>
+        </div>
+    </div>
+</body>
+</html>
