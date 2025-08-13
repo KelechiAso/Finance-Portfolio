@@ -107,12 +107,49 @@
                 <a href="#projects" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105">
                     View Projects
                 </a>
-                <a href="#contact" class="bg-white border-2 border-gray-300 text-gray-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-transform transform hover:scale-105">
-                    Contact Me
-                </a>
+                <a href="#" id="contact-button" class="bg-white border-2 border-gray-300 text-gray-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-transform transform hover:scale-105">Contact Me
+                    </a>
             </div>
         </div>
     </section>
+
+    <div id="contact-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-sm w-full mx-4 relative transform transition-all duration-300 scale-95 opacity-0" id="modal-content">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="text-center">
+                <img src="assets/images/ProfilePhoto.jpg" alt="Profile Avatar" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-blue-500">
+                <h3 class="text-2xl font-bold text-gray-800">Get in Touch</h3>
+                <p class="text-gray-500 mt-2">I'd love to hear from you!</p>
+                
+                <div class="mt-6 space-y-4">
+                    <a href="mailto:kelechieke14@gmail.com" class="flex items-center justify-center space-x-3 text-blue-600 hover:text-blue-800 transition-colors">
+                        <i class="fas fa-envelope fa-lg"></i>
+                        <span class="text-lg">kelechieke14@gmail.com</span>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/seml" target="_blank" class="flex items-center justify-center space-x-3 text-gray-600 hover:text-blue-600 transition-colors">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                        <span class="text-lg">Connect on LinkedIn</span>
+                    </a>
+
+                    <div class="relative group">
+                        <button class="flex items-center justify-center space-x-3 text-gray-600 hover:text-gray-800 transition-colors">
+                            <i class="fas fa-phone fa-lg"></i>
+                            <span class="text-lg">Phone Number: +234 811 8256 621 </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
 
     <main class="relative z-10">
 
@@ -270,42 +307,82 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
-    <script>
-        function setupHorizontalScroll(wrapperId) {
-            const wrapper = document.getElementById(wrapperId);
-            if (!wrapper) return;
+    <script src="assets/js/main.js"></script> 
+        <script> 
+            function setupHorizontalScroll(wrapperId) { 
+                const wrapper = document.getElementById(wrapperId); 
+                if (!wrapper) return; 
 
-            const container = wrapper.querySelector('.hide-scrollbar');
-            const leftBtn = wrapper.querySelector('.scroll-btn.left');
-            const rightBtn = wrapper.querySelector('.scroll-btn.right');
+                const container = wrapper.querySelector('.hide-scrollbar'); 
+                const leftBtn = wrapper.querySelector('.scroll-btn.left'); 
+                const rightBtn = wrapper.querySelector('.scroll-btn.right'); 
 
-            if (!container || !leftBtn || !rightBtn) return;
+                if (!container || !leftBtn || !rightBtn) return; 
 
-            leftBtn.addEventListener('click', () => {
-                // Scroll by 80% of the container's visible width
-                const scrollAmount = container.clientWidth * 0.8;
-                container.scrollBy({
-                    left: -scrollAmount,
-                    behavior: 'smooth'
-                });
-            });
+                leftBtn.addEventListener('click', () => { 
+                    // Scroll by 80% of the container's visible width 
+                    const scrollAmount = container.clientWidth * 0.8; 
+                    container.scrollBy({ 
+                        left: -scrollAmount, 
+                        behavior: 'smooth' 
+                    }); 
+                }); 
 
-            rightBtn.addEventListener('click', () => {
-                const scrollAmount = container.clientWidth * 0.8;
-                container.scrollBy({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
-            });
-        }
+                rightBtn.addEventListener('click', () => { 
+                    const scrollAmount = container.clientWidth * 0.8; 
+                    container.scrollBy({ 
+                        left: scrollAmount, 
+                        behavior: 'smooth' 
+                    }); 
+                }); 
+            } 
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize the scroll functionality for both sections
-            setupHorizontalScroll('learning-journey-wrapper');
-            setupHorizontalScroll('projects-wrapper');
-            setupHorizontalScroll('relevant-work-wrapper'); // Added new call for the corrected section
-        });
-    </script>
+            document.addEventListener('DOMContentLoaded', () => { 
+                // Initialize the scroll functionality for both sections 
+                setupHorizontalScroll('learning-journey-wrapper'); 
+                setupHorizontalScroll('projects-wrapper'); 
+                setupHorizontalScroll('relevant-work-wrapper'); // Added new call for the corrected section 
+            }); 
+
+
+            // JavaScript to handle the modal 
+            const contactButton = document.getElementById('contact-button'); 
+            const contactModal = document.getElementById('contact-modal'); 
+            const closeModalButton = document.getElementById('close-modal'); 
+            const modalContent = document.getElementById('modal-content'); 
+
+            contactButton.addEventListener('click', (e) => { 
+                e.preventDefault(); 
+                contactModal.classList.remove('hidden'); 
+                setTimeout(() => { 
+                    modalContent.classList.remove('scale-95', 'opacity-0'); 
+                }, 10); 
+            }); 
+
+            closeModalButton.addEventListener('click', () => { 
+                modalContent.classList.add('scale-95', 'opacity-0'); 
+                setTimeout(() => { 
+                    contactModal.classList.add('hidden'); 
+                }, 300); // Match this with the CSS transition duration 
+            }); 
+
+            // Close the modal if the user clicks outside the modal content 
+            contactModal.addEventListener('click', (e) => { 
+                if (e.target === contactModal) { 
+                    modalContent.classList.add('scale-95', 'opacity-0'); 
+                    setTimeout(() => { 
+                        contactModal.classList.add('hidden'); 
+                    }, 300); 
+                } 
+            }); 
+
+            // Other existing scripts... 
+            const menuButton = document.getElementById('menu-button'); 
+            const mobileMenu = document.getElementById('mobile-menu'); 
+
+            menuButton.addEventListener('click', () => { 
+                mobileMenu.classList.toggle('hidden'); 
+            }); 
+        </script>
 </body>
 </html>
